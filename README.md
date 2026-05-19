@@ -25,12 +25,12 @@ git clone https://github.com/Yogaraj02/Yogaraj-Portfolio.git
 cd Yogaraj-Portfolio
 ```
 
-Open `Final Portfolio.html` in your browser.
+Open `index.html` in your browser.
 
 ## Directory Structure
 
 ```
-├── Final Portfolio.html      # Main HTML file for the portfolio
+├── index.html                # Main HTML file for the portfolio
 ├── assets/                   # Directory containing all extracted images and certificates
 │   ├── image_1.jpg
 │   ├── extracted_image_1.jpg
