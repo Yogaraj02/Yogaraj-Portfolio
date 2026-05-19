@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yogaraj S | Cybersecurity Portfolio</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, Helvetica, sans-serif; }
+    html { scroll-behavior:smooth; }
+    body { background:#0f172a; color:#e5e7eb; line-height:1.6; position:relative; overflow-x:hidden; }
+    .bg-shape { position:fixed; border-radius:50%; filter:blur(120px); z-index:-1; animation:float 12s infinite ease-in-out alternate; }
+    .shape-1 { width:45vw; height:45vw; background:rgba(56,189,248,.25); top:-10%; left:-10%; }
+    .shape-2 { width:40vw; height:40vw; background:rgba(139,92,246,.25); bottom:-10%; right:-10%; animation-delay:-6s; }
+    .shape-3 { width:35vw; height:35vw; background:rgba(16,185,129,.2); top:40%; left:60%; animation-delay:-3s; }
+    @keyframes float { 0% { transform:translate(0, 0) scale(1); } 100% { transform:translate(10%, 10%) scale(1.2); } }
+    a { color:inherit; text-decoration:none; }
+    .container { width:90%; max-width:1150px; margin:auto; }
+    header { position:sticky; top:0; z-index:10; background:rgba(15,23,42,.4); border-bottom:1px solid rgba(255,255,255,.1); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); }
+    nav { display:flex; justify-content:space-between; align-items:center; padding:18px 0; }
+    .logo { font-size:22px; font-weight:800; color:#38bdf8; }
+    .nav-links { display:flex; gap:20px; list-style:none; font-size:14px; flex-wrap:wrap; }
+    .nav-links a { color:#cbd5e1; } .nav-links a:hover { color:#38bdf8; }
+    .hero { min-height:88vh; display:flex; align-items:center; padding:70px 0; }
+    .hero-grid { display:grid; grid-template-columns:1.25fr .75fr; gap:40px; align-items:center; }
+    .badge { display:inline-block; padding:8px 14px; border:1px solid rgba(56,189,248,.35); border-radius:999px; background:rgba(56,189,248,.08); color:#7dd3fc; font-size:14px; margin-bottom:18px; }
+    h1 { font-size:56px; line-height:1.1; margin-bottom:14px; color:#f8fafc; }
+    .hero h2 { font-size:22px; color:#38bdf8; margin-bottom:18px; }
+    .hero p { color:#cbd5e1; max-width:720px; font-size:17px; margin-bottom:28px; }
+    .btn-row, .contact-links { display:flex; gap:14px; flex-wrap:wrap; }
+    .btn { display:inline-block; padding:12px 18px; border-radius:10px; border:1px solid rgba(56,189,248,.4); font-weight:700; transition:.25s; }
+    .btn-primary { background:#38bdf8; color:#020617; } .btn:hover { transform:translateY(-2px); } .btn-outline:hover { background:rgba(56,189,248,.1); color:#38bdf8; }
+    .profile-card, .card, .about-text, .contact-box { background:linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.05); border-top:1px solid rgba(255,255,255,0.15); border-left:1px solid rgba(255,255,255,0.15); border-radius:20px; padding:34px; box-shadow:0 8px 32px 0 rgba(0,0,0,.25); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); transition:all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    .avatar {
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto 20px;
+      object-fit: cover;
+      border: 4px solid #38bdf8;
+      box-shadow: 0 12px 35px rgba(56, 189, 248, 0.25);
+    }
+    .profile-card h3 { text-align:center; color:#f8fafc; font-size:24px; } .profile-card p { text-align:center; color:#cbd5e1; font-size:14px; margin-bottom:18px; }
+    .info-list { list-style:none; font-size:14px; color:#cbd5e1; } .info-list li { padding:10px 0; border-bottom:1px solid rgba(148,163,184,.12); } .info-list strong { color:#38bdf8; }
+    section { padding:72px 0; scroll-margin-top: 80px; } .section-title { font-size:34px; color:#f8fafc; text-align:center; margin-bottom:10px; } .section-subtitle { color:#cbd5e1; text-align:center; max-width:760px; margin:0 auto 38px; }
+    .grid { display:grid; gap:22px; } .grid-2 { grid-template-columns:repeat(2,1fr); } .grid-3 { grid-template-columns:repeat(3,1fr); }
+    .profile-card:hover, .card:hover, .about-text:hover, .contact-box:hover, .stat-box:hover { transform:translateY(-8px) scale(1.02); background:linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)); border-color:rgba(56,189,248,.5); box-shadow:0 15px 45px 0 rgba(0,0,0,.4), 0 0 20px rgba(56,189,248,0.2); }
+    .card h3 { color:#38bdf8; font-size:21px; margin-bottom:12px; } .card h4 { color:#f8fafc; margin:14px 0 8px; } .card p,.card li { color:#cbd5e1; font-size:15px; } .card ul { margin-left:18px; }
+    .tags { display:flex; flex-wrap:wrap; gap:10px; margin-top:12px; } .tag { padding:7px 10px; border-radius:8px; background:rgba(255,255,255,.05); color:#7dd3fc; border:1px solid rgba(255,255,255,.15); font-size:13px; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); }
+    .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:28px; } .stat-box { background:linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.05); border-top:1px solid rgba(255,255,255,0.15); border-left:1px solid rgba(255,255,255,0.15); border-radius:16px; padding:20px; text-align:center; backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); box-shadow:0 8px 32px 0 rgba(0,0,0,.25); transition:all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); } .stat-box h3 { color:#38bdf8; font-size:28px; } .stat-box p { color:#cbd5e1; font-size:14px; }
+    .contact-box { text-align:center; } .contact-links { justify-content:center; margin-top:22px; } footer { padding:24px 0; text-align:center; color:#cbd5e1; border-top:1px solid rgba(148,163,184,.15); background:#020617; font-size:14px; }
+    @media(max-width:900px) { .hero-grid,.grid-2,.grid-3,.stats { grid-template-columns:1fr; } h1 { font-size:42px; } nav { flex-direction:column; gap:12px; } .nav-links { justify-content:center; } }
+  
+    .cert-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+    .cert-item { background:linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.05); border-top:1px solid rgba(255,255,255,0.15); border-left:1px solid rgba(255,255,255,0.15); border-radius:14px; padding:16px; backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); box-shadow:0 8px 32px 0 rgba(0,0,0,.25); transition:all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+    .cert-item:hover { transform:translateY(-6px) scale(1.02); background:linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02)); border-color:rgba(56,189,248,.5); box-shadow:0 15px 45px 0 rgba(0,0,0,.4), 0 0 20px rgba(56,189,248,0.2); }
+    .cert-item h4 { color:#f8fafc; margin:0 0 6px; font-size:16px; }
+    .cert-item p { color:#cbd5e1; font-size:14px; margin:3px 0; }
+    .cert-item .type { color:#38bdf8; font-weight:700; }
+    @media(max-width:900px) { .cert-grid { grid-template-columns:1fr; } }
+
+  
+    .view-cert-btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 9px 13px;
+      border-radius: 9px;
+      background: #38bdf8;
+      color: #020617;
+      font-size: 13px;
+      font-weight: 800;
+      border: 0;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .view-cert-btn:hover {
+      background: #7dd3fc;
+      transform: translateY(-2px);
+    }
+
+    .certificate-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: rgba(2, 6, 23, 0.94);
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .certificate-modal.active {
+      display: flex;
+    }
+
+    .certificate-modal-content {
+      position: relative;
+      max-width: 96vw;
+      max-height: 92vh;
+      overflow: auto;
+      background: rgba(15,23,42,.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+    }
+
+    .certificate-modal-content img {
+      display: block;
+      max-width: 92vw;
+      max-height: 84vh;
+      width: auto;
+      height: auto;
+      border-radius: 10px;
+      background: white;
+    }
+
+    .certificate-close {
+      position: sticky;
+      top: 0;
+      float: right;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: none;
+      background: #38bdf8;
+      color: #020617;
+      font-size: 28px;
+      font-weight: 900;
+      cursor: pointer;
+      margin-bottom: 10px;
+      z-index: 2;
+    }
+
+  </style>
+</head>
+<body>
+<div class="bg-shape shape-1"></div>
+<div class="bg-shape shape-2"></div>
+<div class="bg-shape shape-3"></div>
+<header><div class="container"><nav><div class="logo">Yogaraj S</div><ul class="nav-links"><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#practice">Practice</a></li><li><a href="#education">Education</a></li><li><a href="#certifications">Certifications</a></li><li><a href="#contact">Contact</a></li></ul></nav></div></header>
+<section class="hero"><div class="container hero-grid"><div><span class="badge">Aspiring Cybersecurity Engineer | CSE Student</span><h1>Hi, I'm Yogaraj S</h1><h2>Aspiring Web Application Security Specialist focused on Ethical Hacking and Vulnerability Assessment</h2><p>I am a Computer Science and Engineering student passionate about penetration testing, web security, vulnerability assessment, and hands-on cybersecurity practice.</p><div class="btn-row"><a class="btn btn-primary" href="#projects">View Projects</a><a class="btn btn-outline" href="#contact">Contact Me</a><a class="btn btn-outline" href="https://tryhackme.com/p/YRxHex5ploit" target="_blank">TryHackMe Profile</a></div></div><div class="profile-card"><img class="avatar" src="assets/image_1.jpg" alt="Yogaraj S profile photo"><h3>Yogaraj S</h3><p>Cybersecurity Learner | Web Security Focused</p><ul class="info-list"><li><strong>Location:</strong> Tirunelveli, Tamil Nadu</li><li><strong>Email:</strong> yogaraj4656@gmail.com</li><li><strong>Phone:</strong> 8807652122</li><li><strong>College:</strong> National Engineering College</li></ul></div></div></section>
+<section id="about"><div class="container"><h2 class="section-title">About Me</h2><p class="section-subtitle">A short overview of my cybersecurity interests, technical practice, and career goal.</p><div class="about-text"><p>I am an aspiring Cybersecurity Engineer with a strong interest in Penetration Testing, Vulnerability Assessment, Web Security, and Ethical Hacking. I have hands-on practice with cybersecurity tools such as Kali Linux, Nmap, Wireshark, Splunk, Metasploit, Burp Suite, Hydra, Gobuster, Hashcat, and John the Ripper. My strength is learning through practical labs, network scanning, log analysis, and exploring new security tools quickly. My career goal is to become a Web Application Security Specialist, focusing on testing websites and web applications for vulnerabilities and helping organizations improve application security.</p></div><div class="stats"><div class="stat-box"><h3>Top 2%</h3><p>TryHackMe Global Ranking</p></div><div class="stat-box"><h3>11</h3><p>TryHackMe Badges</p></div><div class="stat-box"><h3>71</h3><p>LeetCode Problems Solved</p></div><div class="stat-box"><h3>5</h3><p>GitHub Repositories</p></div></div></div></section>
+<section id="skills"><div class="container"><h2 class="section-title">Technical Skills</h2><p class="section-subtitle">My technical skill set grouped based on cybersecurity, programming, web development, and core computer science.</p><div class="grid grid-3"><div class="card"><h3>Security & Penetration Testing</h3><div class="tags"><span class="tag">Kali Linux</span><span class="tag">Nmap</span><span class="tag">Metasploit</span><span class="tag">Burp Suite</span><span class="tag">Hydra</span><span class="tag">Gobuster</span></div></div><div class="card"><h3>Network & Log Analysis</h3><div class="tags"><span class="tag">Wireshark</span><span class="tag">Splunk</span><span class="tag">HTTP/DNS Logs</span><span class="tag">Service Detection</span></div></div><div class="card"><h3>Password & Hashing Tools</h3><div class="tags"><span class="tag">Hashcat</span><span class="tag">John the Ripper</span></div></div><div class="card"><h3>Programming</h3><div class="tags"><span class="tag">Java</span><span class="tag">C</span><span class="tag">C++</span></div></div><div class="card"><h3>Web & Database</h3><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Spring Boot</span><span class="tag">MySQL</span><span class="tag">Supabase</span></div></div><div class="card"><h3>Core CS & Platforms</h3><div class="tags"><span class="tag">DBMS</span><span class="tag">Operating Systems</span><span class="tag">Computer Networks</span><span class="tag">Data Structures</span><span class="tag">OOPS</span><span class="tag">GitHub</span><span class="tag">TryHackMe</span><span class="tag">Linux</span><span class="tag">Windows</span></div></div></div></div></section>
+<section id="projects"><div class="container"><h2 class="section-title">Projects</h2><p class="section-subtitle">Academic and technical projects that helped me improve my programming and application development skills.</p><div class="grid grid-2"><div class="card"><h3>College Event Management System</h3><p>A Java and MySQL-based application developed to manage college events efficiently. The system provides login and registration features, admin-side event management, and participant-side event registration.</p><h4>Technologies Used</h4><div class="tags"><span class="tag">Java</span><span class="tag">MySQL</span></div><h4>Key Features</h4><ul><li>User login and registration</li><li>Admin can manage events</li><li>Participants can register for events</li><li>Role-based access flow</li><li>Database-based user and event data management</li></ul><div style="margin-top: 20px;"><a class="btn btn-primary" href="https://github.com/Yogaraj02/EL-Spring-Boot-Application" target="_blank">View Project on GitHub</a></div></div><div class="card"><h3>Bank Management System using OOPS</h3><p>A C++ application developed using Object-Oriented Programming concepts to perform basic banking operations through a simple menu-driven flow.</p><h4>Technologies Used</h4><div class="tags"><span class="tag">C++</span><span class="tag">OOPS</span></div><h4>Key Features</h4><ul><li>Account creation</li><li>Deposit operation</li><li>Withdrawal operation</li><li>Balance checking</li><li>Menu-driven banking system</li></ul></div></div></div></section>
+<section id="practice"><div class="container"><h2 class="section-title">Cybersecurity Practice</h2><p class="section-subtitle">Hands-on cybersecurity learning through labs, tools, and CTF-style practice.</p><div class="grid grid-2"><div class="card"><h3>Practice Areas</h3><ul><li>Practicing beginner-level cybersecurity rooms and CTF challenges on TryHackMe</li><li>Performed network scanning, port scanning, and service detection using Nmap</li><li>Practiced log analysis and security correlation using Splunk with HTTP/DNS logs</li><li>Practiced basic web application request and response analysis using Burp Suite</li><li>Practiced hash cracking using Hashcat and John the Ripper</li></ul></div><div class="card"><h3>Achievements & Profiles</h3><ul><li>TryHackMe Rank: 32754</li><li>TryHackMe Global Ranking: Top 2%</li><li>TryHackMe Badges: 11</li><li>Solved 71 problems on LeetCode</li><li>Maintained 5 GitHub repositories</li><li>Participated in technical events at REC and IIITDM, Chennai</li></ul></div></div></div></section>
+<section id="education"><div class="container"><h2 class="section-title">Education</h2><p class="section-subtitle">My academic background and current learning path.</p><div class="grid grid-2"><div class="card"><h3>Education</h3><h4>B.E. Computer Science and Engineering</h4><p>National Engineering College | 2024 - 2028</p><ul><li>Current Year: 2nd Year</li><li>Department: Computer Science and Engineering</li><li>CGPA: 7.55</li><li>Graduation Year: 2028</li></ul></div><div class="card"><h3>Current Learning</h3><ul><li>Currently learning CCNA through Cisco Networking Academy</li><li>Practicing TryHackMe CTF challenges and cybersecurity labs</li><li>Focusing on Web Application Security, Ethical Hacking, and Vulnerability Assessment</li></ul></div></div></div></section>
+<section id="certifications"><div class="container"><h2 class="section-title">Certifications & CTF Participation</h2><p class="section-subtitle">Verified certificates and participation records from cybersecurity courses, CTF events, technical bootcamps, and academic achievements. Each View Certificate button opens the correct original certificate.</p><h3 style="color:#38bdf8;margin:20px 0 14px;">Certifications</h3><div class="cert-grid"><div class="cert-item"><p class="type">Certification</p><h4>NPTEL - Technical English for Engineers</h4><p>IIT Madras / Swayam</p><p>Aug-Oct 2024</p><p>Elite certification, score 60%</p><button class="view-cert-btn" onclick="openCertificate('cert1')">View Certificate</button></div><div class="cert-item"><p class="type">Certification</p><h4>NPTEL - Ethical Hacking</h4><p>IIT Kharagpur / Swayam</p><p>Jul-Oct 2025</p><p>12-week course, score 54%</p><button class="view-cert-btn" onclick="openCertificate('cert2')">View Certificate</button></div><div class="cert-item"><p class="type">Certification</p><h4>NPTEL - Introduction to Internet of Things</h4><p>IIT Kharagpur / Swayam</p><p>Jul-Oct 2025</p><p>12-week course, score 67%</p><button class="view-cert-btn" onclick="openCertificate('cert3')">View Certificate</button></div><div class="cert-item"><p class="type">Certification</p><h4>Mobile Application Pentesting & Bug Bounty Hunting in 2025</h4><p>Udemy</p><p>Dec 2025</p><p>6.5 hours completion certificate</p><button class="view-cert-btn" onclick="openCertificate('cert4')">View Certificate</button></div><div class="cert-item"><p class="type">Certification</p><h4>TryHackMe - Pre Security (New)</h4><p>TryHackMe</p><p>Feb 2026</p><p>19 hours 10 minutes learning path</p><button class="view-cert-btn" onclick="openCertificate('cert5')">View Certificate</button></div><div class="cert-item"><p class="type">Certification</p><h4>Database Design - English</h4><p>Oracle Academy</p><p>Mar 2026</p><p>Award of Completion</p><button class="view-cert-btn" onclick="openCertificate('cert6')">View Certificate</button></div><div class="cert-item"><p class="type">Certification</p><h4>Linux Training</h4><p>IIT Bombay Spoken Tutorial</p><p>Mar 2026</p><p>Score 80%, Credits 2</p><button class="view-cert-btn" onclick="openCertificate('cert7')">View Certificate</button></div><div class="cert-item"><p class="type">Certification</p><h4>Advanced Cpp Training</h4><p>IIT Bombay Spoken Tutorial</p><p>Apr 2026</p><p>Score 75%, Credits 1</p><button class="view-cert-btn" onclick="openCertificate('cert8')">View Certificate</button></div><div class="cert-item"><p class="type">Certification</p><h4>Cpp Training</h4><p>IIT Bombay Spoken Tutorial</p><p>Apr 2026</p><p>Score 67.50%, Credits 2</p><button class="view-cert-btn" onclick="openCertificate('cert9')">View Certificate</button></div><div class="cert-item"><p class="type">Certification</p><h4>Cisco Networking Basics</h4><p>Cisco Networking Academy</p><p>-</p><p>Networking fundamentals</p></div></div><h3 style="color:#38bdf8;margin:32px 0 14px;">CTF & Cybersecurity Participation</h3><div class="cert-grid"><div class="cert-item"><p class="type">CTF / Cybersecurity Participation</p><h4>ACNCTF - Amrita Cyber Nation 4th Edition</h4><p>Amrita School of Computing, Chennai</p><p>Sep 2025</p><p>CTF participation</p><button class="view-cert-btn" onclick="openCertificate('cert10')">View Certificate</button></div><div class="cert-item"><p class="type">CTF / Cybersecurity Participation</p><h4>H7CTF 2025 International Cybersecurity Competition</h4><p>H7CTF</p><p>Oct 2025</p><p>Online Capture The Flag participation</p><button class="view-cert-btn" onclick="openCertificate('cert11')">View Certificate</button></div><div class="cert-item"><p class="type">CTF / Cybersecurity Participation</p><h4>Mastering Software Security & Vulnerability Assessments</h4><p>IIITDM Kancheepuram</p><p>Dec 2025</p><p>Online bootcamp participation</p><button class="view-cert-btn" onclick="openCertificate('cert12')">View Certificate</button></div><div class="cert-item"><p class="type">CTF / Cybersecurity Participation</p><h4>Mastery in Vulnerability Assessment</h4><p>IIITDM Kancheepuram</p><p>Dec 2025</p><p>Offline bootcamp / mastery certificate</p><button class="view-cert-btn" onclick="openCertificate('cert13')">View Certificate</button></div><div class="cert-item"><p class="type">CTF / Cybersecurity Participation</p><h4>Software Security Challenges - 4th Place</h4><p>IIITDM Kancheepuram</p><p>Dec 2025</p><p>Secured 4th place among 47 participants</p><button class="view-cert-btn" onclick="openCertificate('cert14')">View Certificate</button></div><div class="cert-item"><p class="type">CTF / Cybersecurity Participation</p><h4>OxTI-HackTiVate 24-hour CTF</h4><p>Rajalakshmi Engineering College, Chennai</p><p>Jan 2026</p><p>24-hour CTF participation</p><button class="view-cert-btn" onclick="openCertificate('cert15')">View Certificate</button></div><div class="cert-item"><p class="type">CTF / Cybersecurity Participation</p><h4>ISEA ISAP CTF 2026</h4><p>IIT Madras</p><p>2026</p><p>CTF participation</p><button class="view-cert-btn" onclick="openCertificate('cert16')">View Certificate</button></div><div class="cert-item"><p class="type">CTF / Cybersecurity Participation</p><h4>Virtual CTF of SPARC</h4><p>BMS Institute of Technology and Management</p><p>2026</p><p>Signal Processing Based Virtual CTF participation</p><button class="view-cert-btn" onclick="openCertificate('cert17')">View Certificate</button></div><div class="cert-item"><p class="type">CTF / Cybersecurity Participation</p><h4>MythX National Level Cybersecurity CTF Challenge</h4><p>KIET Group of Institutions</p><p>2026</p><p>Team Hex$ploit participation</p><button class="view-cert-btn" onclick="openCertificate('cert18')">View Certificate</button></div><div class="cert-item"><p class="type">CTF / Cybersecurity Participation</p><h4>CREST CTF 2026</h4><p>Pimpri Chinchwad University</p><p>2026</p><p>8-hour Capture Flag Competition</p><button class="view-cert-btn" onclick="openCertificate('cert19')">View Certificate</button></div><div class="cert-item"><p class="type">CTF / Cybersecurity Participation</p><h4>KJSSE CTF 3.0</h4><p>K.J. Somaiya School of Engineering</p><p>2026</p><p>CTF participation</p><button class="view-cert-btn" onclick="openCertificate('cert20')">View Certificate</button></div><div class="cert-item"><p class="type">CTF / Cybersecurity Participation</p><h4>ZYVERSE 2K25 Technical Symposium</h4><p>SRM Valliammai Engineering College</p><p>Sep 2025</p><p>Cybersecurity symposium event participation</p><button class="view-cert-btn" onclick="openCertificate('cert21')">View Certificate</button></div></div><h3 style="color:#38bdf8;margin:32px 0 14px;">Other Achievements</h3><div class="cert-grid"><div class="cert-item"><p class="type">Achievement</p><h4>Drawing Competition - First Prize</h4><p>National Engineering College / NSS</p><p>Aug 2025</p><p>Awarded first prize</p><button class="view-cert-btn" onclick="openCertificate('cert22')">View Certificate</button></div><div class="cert-item"><p class="type">Achievement</p><h4>Waste to Wealth Event - Second Prize</h4><p>National Engineering College / NSS</p><p>Aug 2025</p><p>Awarded second prize</p><button class="view-cert-btn" onclick="openCertificate('cert23')">View Certificate</button></div></div></div></section>
+<section id="strengths"><div class="container"><h2 class="section-title">Soft Skills</h2><p class="section-subtitle">Personal strengths that support my technical learning and teamwork.</p><div class="grid grid-2"><div class="card"><h3>Strengths</h3><div class="tags"><span class="tag">Problem Solving</span><span class="tag">Teamwork</span><span class="tag">Time Management</span><span class="tag">Self Learning</span></div></div><div class="card"><h3>Languages Known</h3><div class="tags"><span class="tag">Tamil</span><span class="tag">English</span></div></div></div></div></section>
+<section id="contact"><div class="container"><h2 class="section-title">Contact Me</h2><p class="section-subtitle">Feel free to connect with me for cybersecurity learning, projects, and opportunities.</p><div class="contact-box"><h3>Yogaraj S</h3><p>Email: <a href="mailto:yogaraj4656@gmail.com">yogaraj4656@gmail.com</a></p><p>Phone: <a href="tel:+918807652122">+91 8807652122</a></p><div class="contact-links"><a class="btn btn-primary" href="mailto:yogaraj4656@gmail.com">Email Me</a><a class="btn btn-outline" href="https://www.linkedin.com/in/yoga-raj-618aa3321/" target="_blank">LinkedIn</a><a class="btn btn-outline" href="https://github.com/Yogaraj02" target="_blank">GitHub</a><a class="btn btn-outline" href="https://leetcode.com/u/xzp2REd0kq/" target="_blank">LeetCode</a><a class="btn btn-outline" href="https://tryhackme.com/p/YRxHex5ploit" target="_blank">TryHackMe</a></div></div></div></section>
+<footer><div class="container"><p>© 2026 Yogaraj S. All Rights Reserved.</p></div></footer>
+
+  <div id="certificateModal" class="certificate-modal" onclick="closeCertificate(event)">
+    <div class="certificate-modal-content">
+      <button class="certificate-close" onclick="closeCertificate(event)">×</button>
+      <img id="certificateModalImage" src="" alt="Certificate preview">
+    </div>
+  </div>
+
+  <script>
+    const certificateImages = {
+      'cert1': 'assets/extracted_image_1.jpg',
+      'cert2': 'assets/extracted_image_2.jpg',
+      'cert3': 'assets/extracted_image_3.jpg',
+      'cert4': 'assets/extracted_image_4.jpg',
+      'cert5': 'assets/extracted_image_5.jpg',
+      'cert6': 'assets/extracted_image_6.jpg',
+      'cert7': 'assets/extracted_image_7.jpg',
+      'cert8': 'assets/extracted_image_8.jpg',
+      'cert9': 'assets/extracted_image_9.jpg',
+      'cert10': 'assets/extracted_image_10.jpg',
+      'cert11': 'assets/extracted_image_11.jpg',
+      'cert12': 'assets/extracted_image_12.jpg',
+      'cert13': 'assets/extracted_image_13.jpg',
+      'cert14': 'assets/extracted_image_14.jpg',
+      'cert15': 'assets/extracted_image_15.jpg',
+      'cert16': 'assets/extracted_image_16.jpg',
+      'cert17': 'assets/extracted_image_17.jpg',
+      'cert18': 'assets/extracted_image_18.jpg',
+      'cert19': 'assets/extracted_image_19.jpg',
+      'cert20': 'assets/extracted_image_20.jpg',
+      'cert21': 'assets/extracted_image_21.jpg',
+      'cert22': 'assets/extracted_image_22.jpg',
+      'cert23': 'assets/extracted_image_23.jpg'
+    };
+
+    function openCertificate(id) {
+      const modal = document.getElementById('certificateModal');
+      const modalImage = document.getElementById('certificateModalImage');
+      modalImage.src = certificateImages[id];
+      modal.classList.add('active');
+    }
+
+    function closeCertificate(event) {
+      if (
+        event.target.id === 'certificateModal' ||
+        event.target.classList.contains('certificate-close')
+      ) {
+        document.getElementById('certificateModal').classList.remove('active');
+        document.getElementById('certificateModalImage').src = '';
+      }
+    }
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        document.getElementById('certificateModal').classList.remove('active');
+        document.getElementById('certificateModalImage').src = '';
+      }
+    });
+  </script>
+
+</body>
+</html>
