@@ -267,7 +267,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const termLines = [
       { cmd: 'whoami', output: 'guest-visitor@yogaraj-sec:~$ Yogaraj S | Cybersecurity Enthusiast | B.E CSE Student' },
       { cmd: 'skills --list', output: 'Security: Kali Linux, Nmap, Burp Suite, Wireshark, Metasploit, Splunk, John the Ripper\nProgramming: Java, C, C++, Spring Boot, SQL, HTML/CSS' },
-      { cmd: 'projects --show', output: '1. College Event Manager (Spring Boot / MySQL)\n2. Bank Management System (C++ / OOP)\n3. Remote Sensing GIS Classifier (Python / Machine Learning)\n4. School Mapping & Suitability Analysis (GIS / Python)' },
+      { cmd: 'projects --show', output: '1. College Event Manager (Spring Boot / MySQL)\n2. Bank Management System (C++ / OOP)\n3. School Mapping & Suitability Analysis (GIS / Python)' },
       { cmd: 'contact --email', output: 'Primary Email: yogaraj4656@gmail.com\nTryHackMe: https://tryhackme.com/p/YRxHex5ploit' }
     ];
     let sequenceIndex = 0;
@@ -567,99 +567,5 @@ function closeCertificate(event) {
 document.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
     closeCertificate(event);
-    closeProjectDetails(event);
   }
 });
-
-// --- 13. Project Details Modal ---
-const projectDetailsData = {
-  'school-mapping': {
-    title: 'School Mapping and Suitability Analysis',
-    category: 'GIS / Remote Sensing / Data Analysis',
-    description: 'This project analyzes school locations using QGIS, Python, raster data, shapefiles, and suitability scoring methods. It includes school location mapping, buffer analysis, road and amenity proximity analysis, vegetation and built-up analysis, climate risk layers, and final suitability classification. The project helps identify whether a school location is Suitable, Moderately Suitable, or Not Suitable based on multiple spatial and environmental factors.',
-    technologies: ['Python', 'QGIS', 'GeoPandas', 'Rasterio', 'Pandas', 'NumPy', 'Shapely', 'Google Earth Engine', 'Remote Sensing', 'GIS', 'CSV / Shapefile / GeoTIFF'],
-    features: [
-      'School location mapping',
-      '500m buffer analysis',
-      'Road network and nearby amenity analysis',
-      'Vegetation, water, built-up, and open land analysis',
-      'Climate risk analysis using raster layers',
-      'Flood, landslide, heat, cyclone, and sea level rise risk evaluation',
-      'Suitability classification: Suitable, Moderately Suitable, Not Suitable',
-      'Final report, PPT, QGIS project, output files, shapefiles, and raster data included'
-    ],
-    highlights: [
-      'Data Code',
-      'Final Model',
-      'Output',
-      'Shapefile',
-      'Tif',
-      'PPT file',
-      'Project Report PDF',
-      'QGIS project file',
-      'CSV dataset'
-    ],
-    github: 'https://github.com/Yogaraj02/School-Mapping-and-Analysis'
-  }
-};
-
-function openProjectDetails(id) {
-  const modal = document.getElementById('projectDetailsModal');
-  const project = projectDetailsData[id];
-  if (!modal || !project) return;
-  
-  document.getElementById('projectDetailsTitle').textContent = project.title;
-  document.getElementById('projectDetailsCategory').textContent = project.category;
-  
-  let techBadges = project.technologies.map(t => `<span class="tag">${t}</span>`).join(' ');
-  let featuresList = project.features.map(f => `<li>${f}</li>`).join('');
-  let highlightsList = project.highlights.map(h => `<li>${h}</li>`).join('');
-  
-  const bodyContent = `
-    <h4 style="color: var(--text-bright); font-size: 16px; margin: 20px 0 10px 0; font-weight: 700; border-left: 3px solid var(--neon-purple); padding-left: 10px;">Project Overview</h4>
-    <p style="color: var(--text-muted); font-size: 15px; line-height: 1.7; margin-bottom: 15px;">${project.description}</p>
-    
-    <h4 style="color: var(--text-bright); font-size: 16px; margin: 20px 0 10px 0; font-weight: 700; border-left: 3px solid var(--neon-purple); padding-left: 10px;">Technologies & Tools Used</h4>
-    <div class="tags" style="margin-bottom: 20px; display: flex; flex-wrap: wrap; gap: 8px;">
-      ${techBadges}
-    </div>
-    
-    <h4 style="color: var(--text-bright); font-size: 16px; margin: 20px 0 10px 0; font-weight: 700; border-left: 3px solid var(--neon-purple); padding-left: 10px;">Key Features</h4>
-    <ul style="margin-left: 20px; color: var(--text-muted); font-size: 14px; margin-bottom: 15px; list-style-type: disc;">
-      ${featuresList}
-    </ul>
-    
-    <h4 style="color: var(--text-bright); font-size: 16px; margin: 20px 0 10px 0; font-weight: 700; border-left: 3px solid var(--neon-purple); padding-left: 10px;">Repository Folder Highlights</h4>
-    <ul style="margin-left: 20px; color: var(--text-muted); font-size: 14px; margin-bottom: 15px; list-style-type: disc;">
-      ${highlightsList}
-    </ul>
-  `;
-  
-  document.getElementById('projectDetailsBody').innerHTML = bodyContent;
-  document.getElementById('projectDetailsGitHubLink').href = project.github;
-  
-  modal.style.display = 'flex';
-  setTimeout(() => {
-    modal.classList.add('active');
-  }, 10);
-  document.body.style.overflow = 'hidden';
-}
-
-function closeProjectDetails(event) {
-  const modal = document.getElementById('projectDetailsModal');
-  if (modal) {
-    if (
-      !event || 
-      event.target.id === 'projectDetailsModal' ||
-      event.target.classList.contains('project-close') ||
-      event.key === 'Escape' ||
-      event.target.textContent === 'Close'
-    ) {
-      modal.classList.remove('active');
-      document.body.style.overflow = '';
-      setTimeout(() => {
-        modal.style.display = 'none';
-      }, 300);
-    }
-  }
-}
