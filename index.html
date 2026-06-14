@@ -114,7 +114,7 @@
       <!-- Quick Metrics Grid with Counters -->
       <div class="stats">
         <div class="stat-box">
-          <h3 class="stat-number" data-target="3">0</h3>
+          <h3 class="stat-number" data-target="4">0</h3>
           <p>Projects Completed</p>
         </div>
         <div class="stat-box">
@@ -294,6 +294,32 @@
               <li>Random Forest classifier with 92% classification accuracy</li>
               <li>Exports categorical GIS maps for environmental analysts</li>
             </ul>
+          </div>
+        </div>
+
+        <!-- Project 4: School Mapping and Suitability Analysis -->
+        <div class="glass-card project-card" data-category="gis">
+          <div>
+            <span class="badge" style="margin-bottom: 15px; font-size: 11px; padding: 4px 10px;">GIS / Remote Sensing</span>
+            <h3>School Mapping and Suitability Analysis</h3>
+            <p>A GIS-based school mapping and suitability analysis project focused on identifying and evaluating school locations using spatial data, environmental factors, accessibility, safety, and climate risk indicators.</p>
+            <h4>Technologies Used</h4>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">QGIS</span>
+              <span class="tag">GeoPandas</span>
+              <span class="tag">Rasterio</span>
+            </div>
+            <h4>Key Features</h4>
+            <ul>
+              <li>School location mapping & 500m buffer analysis</li>
+              <li>Road network, amenities & proximity scoring</li>
+              <li>Vegetation, water & climate risk evaluation</li>
+            </ul>
+          </div>
+          <div class="project-footer">
+            <a class="btn btn-primary" href="https://github.com/Yogaraj02/School-Mapping-and-Analysis" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <button class="btn btn-outline" onclick="openProjectDetails('school-mapping')">Details</button>
           </div>
         </div>
       </div>
@@ -773,6 +799,24 @@
     <div class="certificate-modal-content">
       <button class="certificate-close" onclick="closeCertificate(event)" aria-label="Close modal">×</button>
       <img id="certificateModalImage" src="" alt="Certificate preview">
+    </div>
+  </div>
+
+  <!-- Project Details Modal Component -->
+  <div id="projectDetailsModal" class="project-modal" onclick="closeProjectDetails(event)">
+    <div class="project-modal-content">
+      <button class="project-close" onclick="closeProjectDetails(event)" aria-label="Close modal">×</button>
+      <div class="project-modal-header">
+        <h3 class="project-modal-title" id="projectDetailsTitle">School Mapping and Suitability Analysis</h3>
+        <p class="project-modal-category" id="projectDetailsCategory">GIS / Remote Sensing / Data Analysis</p>
+      </div>
+      <div class="project-modal-body" id="projectDetailsBody">
+        <!-- Project details content is dynamically generated via JS -->
+      </div>
+      <div class="project-modal-footer">
+        <a id="projectDetailsGitHubLink" class="btn btn-primary" href="https://github.com/Yogaraj02/School-Mapping-and-Analysis" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        <button class="btn btn-outline" onclick="closeProjectDetails(event)">Close</button>
+      </div>
     </div>
   </div>
 
