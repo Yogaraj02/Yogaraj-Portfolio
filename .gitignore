@@ -1,0 +1,3 @@
+# Exclude executable tools and temporary zip archives
+bin/
+gh.zip
